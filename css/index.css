@@ -1,0 +1,179 @@
+
+/*segundo carousel inicio*/
+
+#slider{
+
+		overflow: hidden;
+
+}
+
+#slider figure {
+
+			position: relative;
+			width: 400%;
+			margin: 0;
+			left: 0;
+			animation: 20s slider infinite;
+}
+
+#slider figure img {
+
+	width: 20%;
+	float: left;
+
+}
+
+@keyframes slider {
+	0% {
+		left: 0;
+	}
+	20% {
+			left: 0;
+	}
+	25% {
+			left: -100%;
+	}
+	45% {
+			left: -100%;
+	}
+	50% {
+			left: -200%;
+	}
+	70%{
+			left: -200;
+	}
+	75% {
+			left: -300%;
+	}
+	95%{
+			left: -300%;
+
+	}
+	100%{
+			left: -400%
+	}
+
+}
+
+/*segundo carousel fin*/
+
+
+h2 {
+  font-weight: 200;
+  letter-spacing: -2px;
+  font-size: 2em;
+}
+
+h2 span {
+  font-weight: 800;
+}
+
+
+.texto{
+
+background:#dd3333;
+
+}
+
+.text-borrado{
+
+margin: 20px;
+ padding-left: 100px;
+color: white
+
+}
+
+
+.btn-outline-primary{
+
+  color: #fff;
+  background-color:#dd3333 ;
+  border-color: white;
+
+}
+
+.btn-outline-primary:hover {
+    color: #dd3333;
+    background-color: white;
+    border-color: white;
+
+}
+
+.boton{
+
+margin: 20px;
+
+}
+
+.titulo-clase{
+
+
+
+}
+
+.clase{
+
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.titulo-clase{
+
+color: black;
+
+}
+
+.texto-clase{
+
+color: grey;
+
+}
+
+.instagram{
+
+background-color: black;
+
+}
+
+.logo{
+
+margin: 20px;
+color: grey;
+
+}
+
+
+.carta{
+
+margin-top: 20px;
+margin-bottom: 30px;
+
+}
+
+
+.card{
+
+margin-left:40px;
+
+}
+
+.card:hover{
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  transition: .5s ease;
+  background-color: rgba(255, 0, 0, 0.75);
+
+}
+
+.botones{
+
+margin-bottom: 30px;
+
+}
