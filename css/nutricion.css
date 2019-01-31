@@ -42,7 +42,7 @@ color: grey;
 
 .puntos{
 
-text-align: justify;
+text-align: center;
 
 
 }
@@ -58,6 +58,13 @@ font-size: 30px;
 .texto{
 
 color: white;
+text-align: center;
+
+}
+
+.col-md-12{
+
+padding: 100px;
 
 }
 

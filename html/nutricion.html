@@ -5,12 +5,12 @@
     <link rel="icon" href="../images/fav_ico.png" width="10" height"10">
     <script src="../js/jquery.js" charset="utf-8"></script>
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/nosotros.css">
+    <link rel="stylesheet" href="../css/nutricion.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
     <script src="../js/bootstrap.js" charset="utf-8"></script>
 
-    <title>Nosotros</title>
+    <title>Nutrición</title>
   </head>
   <body>
 
@@ -67,51 +67,27 @@
     <div class="row">
 
 
-    <div class="col-md-4">
 
-    </div>
-    <div class="col-md-4">
+    <div class="col-md-12">
       <div class="titulo">
         <h2>
-    ¿QUÉ ES FIT PROJECT?
+    ÁREA DE NUTRICIÓN
       </h2>
       </div>
 
       <div class="texto">
-        <p>Somos un Centro Deportivo de Transformación física y personal basado en entrenamiento funcional siendo nuestro objetivo ayudarte a cumplir tus metas. Nuestro programa consta de 8 semanas de entrenamiento dirigido por Coaches certificados y que lo realizaras de acuerdo a tu capacidad física, de este modo FIT PROJECT es para todos. </p>
-        <div class="col puntos">
-          <p>
-            <label>*</label>  GANA EL 50% DE TU MEMBRESÍA con FIT CHALLENGE: Logra tus metas con nuestra ayuda.
-          </p>
-          <p>
-            <label>*</label>  ENTRENAMIENTO FUNCIONAL: ejercicios fáciles diseñados y organizados para ser útiles, prácticos, cómodos y adecuados para tu bienestar integral.
-          </p>
-          <p>
-            <label>*</label>   OCHO SEMANAS DE ENTRENAMIENTO FUNCIONAL: que cambiarán tu mundo.
-          </p>
-          <p>
-            <label>*</label>  CLASE DE MUESTRA: Agenda tu clase
-          </p>
-          <p>
-            <label>*</label>  DESCARGA LA APP FIT PROJECT: agenda tus clases y citas FIT PROJECT.
-          </p>
-
-        </div>
-
+        <p>Un espacio más para ti en FIT PROJECT, donde el principal objetivo es enseñarte como debe ser una buena alimentación, pero sobre todo inculcarte hábitos saludables que durarán para el resto de tu vida y que además te servirá como un plus para tu programa de 8 semanas.</p>
+        <p>Yo Natalia, nutrióloga de FIT PROJECT, te llevo de la mano con un plan individualizado (sexo, edad, estilo de vida, trabajo, ejercicio, etc.)  y SIEMPRE basado en tus metas a lograr.</p>
+        <p>Este espacio no solamente es para aquellos que están inscritos en el programa de entrenamiento funcional. Está abierto a todo público que quiera darse la oportunidad de tener un estilo de vida más saludable.</p>
+        <p>” Recuerda que el 70% de tus resultados en el entrenamiento es tu ALIMENTACIÓN”</p>
+        <p>Por eso FIT PROJECT pone a tu disposición el área de nutrición en base a tus necesidades y metas individuales</p>
       </div>
-    </div>
-
-    <div class="col-md-4">
 
     </div>
 
-    <div class="text-borrado">
-      <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
-      <h2>
-        CONTAMOS CON:<span class="txt-rotate" data-period="1800" data-rotate='[ "Snack bar.","Consultas de nutricion","Regaderas, vestidores y lockers"]'></span>
-      </h2>
+    
 
-    </div>
+
 
 
   </div>
@@ -163,6 +139,63 @@
 
   </body>
 
+  <script type="text/javascript">
+    var TxtRotate = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+  };
 
+  TxtRotate.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+    var that = this;
+    var delta = 200 - Math.random() * 200;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function() {
+      that.tick();
+    }, delta);
+  };
+
+  window.onload = function() {
+    var elements = document.getElementsByClassName('txt-rotate');
+    for (var i=0; i<elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-rotate');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #000; padding: 0 10px; }";
+    document.body.appendChild(css);
+  };
+  </script>
 
 </html>
